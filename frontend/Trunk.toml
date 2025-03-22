@@ -1,0 +1,12 @@
+[build]
+target = "index.html" # ビルドのターゲット（index.html を基準にする）
+dist = "dist"         # 出力ディレクトリ
+release = false       # デフォルトはデバッグビルド（リリースビルドは `--release`）
+
+[serve]
+port = 8080 # Trunk のローカルサーバーのポート
+open = true # 自動的にブラウザを開く
+
+[[proxy]]
+backend = "http://localhost:3000" # API のバックエンド
+rewrite = "/api/"                 # API へのリクエストをバックエンドに転送
